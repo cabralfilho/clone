@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+    <script src="/sharing/files/scripts/detector.min.js"></script>
+    <link rel="stylesheet" href="/sharing/files/css/site.min.css">
+    <script src="/sharing/files/scripts/oauth2.js?v=192A1CC"></script>
+</head>
+<body>
+    <div class="content-container"></div>
+</body>
+<script>
+    var oAuthInfo = {"oauth_state":"yd-NdzELZds0j5BfFzBqVUbHRlP_ETH91XuMGKk0nQqX5rtYY8noczEDKjPCogl-LwY7xNIt29kMIgO2lL86FVOFm99eGHtRA_6AHu-LZSZ1rRICt4h20EF4bZaPqFxN5S21H0W346X8gys7KU3AdF-_RRQo9jXTD8Cgrb6jsYdSrcJqA-ynApggcSnLODex3oVPyO1ihsnAIoDAvWFio0LzXdTVFBI20pXtLnmQvoySraeaTTL7H0FKSY8yohw0Q3UGYF-Js_66cxWkZvlpQ-TaE0ZFt1RJuBWvRJVT9_Kd671049lgccEGqKD1C82J8cmBZ6ast7K2wCsZ4dGeoumbMnHgFQQpnOmPCMSs2CsL-o4c0dl_-ZGyh9vcsOT23MkpFsxeVrqByVe_yaP7teMVB-4hOHwYbuZfC1VaspxZ6xKMbe1sz8N5kJHlNQtXrwBNe_XqY2hazS6tIKMqpafvvIDrxfPhvMY67tKawo8HXf71vY4H4GBVSORmScsY","client_id":"opsdashboard","appTitle":"Operations Dashboard for ArcGIS","locale":"pt-br","orgName":"Imagem - Governo Federal","persistOption":true,"showSocialLogins":true,"contextPath":"/sharing","appOrgInfo":{"id":"P3ePLMYs2RVChkJx","name":"Esri","description":"A Esri publica um conjunto de mapas e aplicativos prontos para utilizar que estão disponíveis como parte do ArcGIS.  O ArcGIS é uma plataforma de mapeamento que habilita você a criar mapas interativos e aplicativos para compartilhar dentro da sua organização ou publicamente.","thumbnail":"thumbnail.jpg"},"orgUrlBase":"maps.arcgis.com","helpBase":"https://doc.arcgis.com/en/arcgis-online/","hideCrossOrgSigninLink":true}
+    oAuthInfo.locale = ((oAuthInfo.locale && oAuthInfo.locale === "iw") ? "he" : oAuthInfo.locale);
+    require.config({
+        baseUrl: "/sharing/files/scripts/",
+        locale: oAuthInfo.locale && oAuthInfo.locale.toLowerCase() || ""
+    });
+    require(["signIn", "domReady!"], function (signIn) {
+        signIn.startup(oAuthInfo);
+    });
+</script>
+</html>
